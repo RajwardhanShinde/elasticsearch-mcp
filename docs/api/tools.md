@@ -1,10 +1,10 @@
-# Elastic MCP API Reference
+# Elasticsearch MCP API Reference
 
-Complete reference for all available MCP tools in the elastic-mcp server.
+Complete reference for all available MCP tools in the elasticsearch-mcp server.
 
 ## Overview
 
-The elastic-mcp server provides 7 comprehensive tools for Elasticsearch operations:
+The elasticsearch-mcp server provides 7 comprehensive tools for Elasticsearch operations:
 
 | Tool | Purpose | Category |
 |------|---------|----------|

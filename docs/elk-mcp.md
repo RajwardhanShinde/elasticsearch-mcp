@@ -16,7 +16,7 @@ In our organization, multiple machine learning models and Node.js applications r
 To address these challenges, we need a standardized, reusable solution that simplifies integration with the ELK stack. By developing a dedicated npm package, we can centralize the logic for interacting with Elasticsearch, streamline development processes, and ensure consistency across all integrations.
 
 ## Decision
-We will develop an npm package named **"elastic-mcp"** (Elastic Search Model Context Protocol) to provide a set of tools for Node.js applications to interact seamlessly with the ELK stack. The package will leverage the `@elastic/elasticsearch` client to handle connections to Elasticsearch, specifically supporting authentication via cloud ID and API key for Elastic Cloud environments.
+We will develop an npm package named **"elasticsearch-mcp"** (Elasticsearch Model Context Protocol) to provide a set of tools for Node.js applications to interact seamlessly with the ELK stack. The package will leverage the `@elastic/elasticsearch` client to handle connections to Elasticsearch, specifically supporting authentication via cloud ID and API key for Elastic Cloud environments.
 
 The package will expose the following tools to facilitate interaction with Elasticsearch:
 
@@ -67,10 +67,10 @@ Given these alternatives, building a dedicated MCP package is the most effective
 - **Versioning**: Semantic versioning will be used to manage releases and ensure compatibility with dependent projects.
 
 ## Example Usage
-Below is an example of how the `elastic-mcp` package might be used in a Node.js application:
+Below is an example of how the `elasticsearch-mcp` package might be used in a Node.js application:
 
 ```javascript
-const ElasticMCP = require('elastic-mcp');
+const ElasticMCP = require('elasticsearch-mcp');
 
 // Initialize the MCP with Elastic Cloud credentials
 const mcp = new ElasticMCP({
@@ -105,4 +105,4 @@ mcp.insertData('my-index', { id: '1', data: { name: 'Example', value: 42 } }).th
 - [@elastic/elasticsearch Documentation](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/index.html)
 - [Elasticsearch API Key Authentication](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-api-create-api-key.html)
 
-This ADR outlines the decision to build the "elastic-mcp" npm package, providing a clear rationale, decision details, and consequences while aligning with the organization's needs and best practices for software architecture documentation.
+This ADR outlines the decision to build the "elasticsearch-mcp" npm package, providing a clear rationale, decision details, and consequences while aligning with the organization's needs and best practices for software architecture documentation.

@@ -5,10 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2025-08-03
+
+### Changed
+- **BREAKING**: Renamed package from `elastic-mcp` to `elasticsearch-mcp`
+- Updated binary command to `elasticsearch-mcp`
+- Updated all documentation to reflect new package name
+- Fixed MCP protocol communication by using stderr for logging
+
+### Fixed
+- Logger now writes to stderr only, preventing JSON parsing errors in Claude Desktop
+- MCP protocol communication no longer interfered with by log output
+
+## [0.1.1] - 2025-08-03
+
+### Changed
+- Updated repository URLs to correct GitHub repository
+- Disabled tests in prepublishOnly script temporarily
+
 ## [0.1.0] - 2025-01-15
 
 ### Added
-- Initial release of elastic-mcp server
+- Initial release of elasticsearch-mcp server
 - **Index Management Tools**:
   - `fetch_indices` - List and filter Elasticsearch indices
   - `create_index` - Create indices with mappings and settings

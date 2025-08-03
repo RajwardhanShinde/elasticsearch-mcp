@@ -1,13 +1,13 @@
-# Elastic MCP
+# Elasticsearch MCP
 
 > **Model Context Protocol server for Elasticsearch integration with comprehensive security and performance features**
 
-[![npm version](https://badge.fury.io/js/elastic-mcp.svg)](https://www.npmjs.com/package/elastic-mcp)
+[![npm version](https://badge.fury.io/js/elasticsearch-mcp.svg)](https://www.npmjs.com/package/elasticsearch-mcp)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?logo=elasticsearch&logoColor=white)](https://www.elastic.co/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**elastic-mcp** is a Model Context Protocol (MCP) server that provides standardized, secure tools for interacting with Elasticsearch clusters. Built with TypeScript and optimized for Elastic Cloud environments, it offers comprehensive data management capabilities with enterprise-grade security features.
+**elasticsearch-mcp** is a Model Context Protocol (MCP) server that provides standardized, secure tools for interacting with Elasticsearch clusters. Built with TypeScript and optimized for Elastic Cloud environments, it offers comprehensive data management capabilities with enterprise-grade security features.
 
 ## 🚀 Features
 
@@ -23,7 +23,7 @@
 ## 📦 Installation
 
 ```bash
-npm install elastic-mcp
+npm install elasticsearch-mcp
 ```
 
 ## 🏃‍♂️ Quick Start
@@ -36,7 +36,7 @@ export ELASTIC_CLOUD_ID="your-cloud-id"
 export ELASTIC_API_KEY="your-api-key"
 
 # Start the MCP server
-npx elastic-mcp
+npx elasticsearch-mcp
 ```
 
 ### 2. Using with Claude Desktop
@@ -46,9 +46,9 @@ Add to your Claude Desktop MCP configuration:
 ```json
 {
   "mcpServers": {
-    "elastic-mcp": {
+    "elasticsearch-mcp": {
       "command": "npx",
-      "args": ["elastic-mcp"],
+      "args": ["elasticsearch-mcp"],
       "env": {
         "ELASTIC_CLOUD_ID": "your-cloud-id",
         "ELASTIC_API_KEY": "your-api-key"
@@ -61,7 +61,7 @@ Add to your Claude Desktop MCP configuration:
 ### 3. Using with any MCP Client
 
 ```typescript
-import { ElasticMCPServer } from 'elastic-mcp';
+import { ElasticMCPServer } from 'elasticsearch-mcp';
 
 const server = new ElasticMCPServer();
 await server.start();
@@ -232,7 +232,7 @@ REQUEST_TIMEOUT_MS=30000
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   MCP Client    │◄──►│  Elastic MCP    │◄──►│  Elasticsearch  │
+│   MCP Client    │◄──►│Elasticsearch MCP│◄──►│  Elasticsearch  │
 │  (Claude, etc.) │    │     Server      │    │    Cluster      │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
                               │
@@ -269,8 +269,8 @@ REQUEST_TIMEOUT_MS=30000
 
 ```bash
 # Clone repository
-git clone https://github.com/your-org/elastic-mcp.git
-cd elastic-mcp
+git clone https://github.com/RajwardhanShinde/elk-mcp.git
+cd elk-mcp
 
 # Install dependencies
 npm install
@@ -292,7 +292,7 @@ npm run build
 ### Project Structure
 
 ```
-elastic-mcp/
+elasticsearch-mcp/
 ├── src/
 │   ├── tools/           # MCP tool implementations
 │   ├── elasticsearch/   # ES client and connection management
@@ -364,9 +364,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
-- [npm Package](https://www.npmjs.com/package/elastic-mcp)
-- [GitHub Repository](https://github.com/your-org/elastic-mcp)
-- [Issue Tracker](https://github.com/your-org/elastic-mcp/issues)
+- [npm Package](https://www.npmjs.com/package/elasticsearch-mcp)
+- [GitHub Repository](https://github.com/RajwardhanShinde/elk-mcp)
+- [Issue Tracker](https://github.com/RajwardhanShinde/elk-mcp/issues)
 - [Elasticsearch Documentation](https://www.elastic.co/guide/)
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 
