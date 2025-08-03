@@ -36,8 +36,8 @@ export interface ServerConfig {
 
 export function loadConfig(): ServerConfig {
   const config: ServerConfig = {
-    name: 'elastic-mcp',
-    version: '0.1.0',
+    name: 'elasticsearch-mcp',
+    version: '0.1.2',
     elasticsearch: ElasticConfigSchema.parse({
       cloudId: process.env.ELASTIC_CLOUD_ID,
       apiKey: process.env.ELASTIC_API_KEY,
