@@ -1,0 +1,117 @@
+{
+  "catIndices": [
+    {
+      "index": "test-index-1",
+      "health": "green",
+      "status": "open",
+      "docs.count": "1000",
+      "store.size": "10.5mb",
+      "creation.date": "1640995200000",
+      "uuid": "abc123def456"
+    },
+    {
+      "index": "test-index-2", 
+      "health": "yellow",
+      "status": "open",
+      "docs.count": "500",
+      "store.size": "5.2mb",
+      "creation.date": "1640995300000",
+      "uuid": "def456ghi789"
+    },
+    {
+      "index": ".system-index",
+      "health": "green", 
+      "status": "open",
+      "docs.count": "50",
+      "store.size": "1.1mb",
+      "creation.date": "1640995100000",
+      "uuid": "ghi789jkl012"
+    }
+  ],
+  "indexCreateResponse": {
+    "acknowledged": true,
+    "shards_acknowledged": true,
+    "index": "new-test-index"
+  },
+  "documentIndexResponse": {
+    "_id": "doc123",
+    "_index": "test-index",
+    "_version": 1,
+    "result": "created"
+  },
+  "documentUpdateResponse": {
+    "_id": "doc123",
+    "_index": "test-index", 
+    "_version": 2,
+    "result": "updated"
+  },
+  "documentDeleteResponse": {
+    "_id": "doc123",
+    "_index": "test-index",
+    "_version": 3,
+    "result": "deleted"
+  },
+  "searchResponse": {
+    "took": 15,
+    "timed_out": false,
+    "hits": {
+      "total": {
+        "value": 2,
+        "relation": "eq"
+      },
+      "hits": [
+        {
+          "_id": "doc1",
+          "_score": 1.0,
+          "_source": {
+            "title": "Test Document 1",
+            "content": "This is test content",
+            "timestamp": "2023-01-01T00:00:00Z"
+          }
+        },
+        {
+          "_id": "doc2", 
+          "_score": 0.8,
+          "_source": {
+            "title": "Test Document 2",
+            "content": "This is more test content",
+            "timestamp": "2023-01-02T00:00:00Z"
+          }
+        }
+      ]
+    }
+  },
+  "deleteByQueryResponse": {
+    "took": 147,
+    "timed_out": false,
+    "total": 5,
+    "deleted": 5,
+    "version_conflicts": 0,
+    "noops": 0,
+    "retries": {
+      "bulk": 0,
+      "search": 0
+    }
+  },
+  "scrollResponse": {
+    "_scroll_id": "scroll123456",
+    "took": 5,
+    "timed_out": false,
+    "hits": {
+      "total": {
+        "value": 1000,
+        "relation": "eq"
+      },
+      "hits": [
+        {
+          "_id": "scroll_doc1",
+          "_score": 1.0,
+          "_source": {
+            "field1": "value1",
+            "field2": "value2"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "validIndices": [
+    "valid-index-name",
+    "another_valid_index", 
+    "index-with-numbers-123",
+    "index.with.dots"
+  ],
+  "invalidIndices": [
+    "",
+    "UPPERCASE-INDEX",
+    "index with spaces",
+    "index/with/slashes",
+    ".starts-with-dot",
+    "index..double.dots"
+  ],
+  "sampleDocuments": [
+    {
+      "id": "doc1",
+      "title": "Sample Document 1",
+      "content": "This is a sample document for testing",
+      "tags": ["test", "sample"],
+      "timestamp": "2023-01-01T00:00:00Z",
+      "metadata": {
+        "author": "Test Author",
+        "category": "testing"
+      }
+    },
+    {
+      "id": "doc2", 
+      "title": "Sample Document 2",
+      "content": "Another sample document with different content",
+      "tags": ["test", "example"],
+      "timestamp": "2023-01-02T00:00:00Z",
+      "metadata": {
+        "author": "Another Author", 
+        "category": "example"
+      }
+    }
+  ],
+  "validQueries": [
+    {
+      "match_all": {}
+    },
+    {
+      "match": {
+        "title": "test"
+      }
+    },
+    {
+      "range": {
+        "timestamp": {
+          "gte": "2023-01-01",
+          "lte": "2023-12-31"
+        }
+      }
+    },
+    {
+      "bool": {
+        "must": [
+          { "match": { "content": "sample" } }
+        ],
+        "filter": [
+          { "term": { "tags": "test" } }
+        ]
+      }
+    }
+  ],
+  "invalidQueries": [
+    {
+      "script_score": {
+        "query": { "match_all": {} },
+        "script": {
+          "source": "Math.log(2 + doc['my-int'].value)"
+        }
+      }
+    }
+  ],
+  "sampleMappings": {
+    "properties": {
+      "title": {
+        "type": "text",
+        "analyzer": "standard"
+      },
+      "content": {
+        "type": "text"
+      },
+      "tags": {
+        "type": "keyword"
+      },
+      "timestamp": {
+        "type": "date"
+      },
+      "metadata": {
+        "properties": {
+          "author": {
+            "type": "keyword"
+          },
+          "category": {
+            "type": "keyword"
+          }
+        }
+      }
+    }
+  },
+  "sampleSettings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "analysis": {
+      "analyzer": {
+        "custom_analyzer": {
+          "type": "standard",
+          "stopwords": "_english_"
+        }
+      }
+    }
+  }
+}
