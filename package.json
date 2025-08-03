@@ -1,6 +1,6 @@
 {
   "name": "elastic-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Secure MCP server for Elasticsearch integration with comprehensive tools and Elastic Cloud support",
   "main": "build/index.js",
   "bin": {

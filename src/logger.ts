@@ -71,11 +71,8 @@ export class Logger {
 
     const output = this.formatMessage(entry);
     
-    if (level <= LogLevel.WARN) {
-      console.error(output);
-    } else {
-      console.log(output);
-    }
+    // Write to stderr only (MCP uses stdout for protocol communication)
+    process.stderr.write(output + '\n');
   }
 
   error(message: string, context?: Record<string, unknown>, error?: Error): void {
